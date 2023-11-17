@@ -1,0 +1,45 @@
+create database policiesdb;
+use policiesdb;
+INSERT INTO policy_type (policy_type_id,policy_type_value )
+VALUES
+(1,'Health'),
+(2,'Life'),
+(3,'Two-wheeler'),
+(4,'Property'),
+(5,'Car');
+
+INSERT INTO Benefit (benefit_id,benefit_value) VALUES
+  (101,'["Emergency Room Visits", "Ambulance Services", "Urgent Care"]'),
+  (102,'["Surgical Procedures", "Anesthesia", "Operating Room"]'),
+  (103,'["Diagnostic Tests", "X-Rays", "Lab Work"]'),
+  (104,'["Home Health Care", "Nursing Services", "Medical Equipment Rental"]'),
+  (105,'["Outpatient Services", "Specialist Consultations", "Physical Exams"]'),
+  (106,'["Wellness Checkups", "Immunizations", "Preventive Care"]'),
+  (107,'["Prescription Drug Coverage", "Generic Drugs", "Brand-Name Drugs"]'),
+  (108,'["Rehabilitation Therapy", "Occupational Therapy", "Speech Therapy"]'),
+  (109,'["Vision Exams", "Eye Surgery", "Laser Vision Correction"]'),
+  (110,'["Hearing Aids", "Audiology Services", "Hearing Tests"]');
+
+INSERT INTO Policy (policy_Id, policy_Name, tenure, policy_Company, policy_type_id, policy_Price, coverage, benefit_Id) VALUES
+  (1, 'Policy 1', 1, 'Insurance Corp A', 1, 100.00, 50000, 101),
+  (2, 'Policy 2', 2, 'Insurance Corp B', 2, 150.00, 75000, 102),
+  (3, 'Policy 3', 3, 'Insurance Corp C', 3, 200.00, 100000, 103),
+  (4, 'Policy 4', 4, 'Insurance Corp A', 2, 120.00, 60000, 104),
+  (5, 'Policy 5', 5, 'Insurance Corp D', 1, 80.00, 40000, 105),
+  (6, 'Policy 6', 1, 'Insurance Corp B', 5, 250.00, 120000, 106),
+  (7, 'Policy 7', 2, 'Insurance Corp C', 4, 220.00, 110000, 107),
+  (8, 'Policy 8', 3, 'Insurance Corp D', 3, 170.00, 85000, 108),
+  (9, 'Policy 9', 4, 'Insurance Corp A', 2, 150.00, 75000, 109),
+  (10, 'Policy 10', 5, 'Insurance Corp B', 1, 90.00, 45000, 110);
+
+INSERT INTO Add_On (add_On_Id, policy_Type_Id, add_On_Value) VALUES
+  (10, 1, 'Accidental Coverage'),
+  (11, 1, 'Rider for Critical Illness'),
+  (12, 2, 'Roadside Assistance'),
+  (13, 2, 'No Claim Bonus Protection'),
+  (14, 3, 'Hospital Cash Benefit'),
+  (15, 3, 'Maternity Coverage'),
+  (16, 4, 'Personal Accident Cover'),
+  (17, 4, 'Loss of Baggage Cover'),
+  (18, 5, 'Natural Calamity Protection'),
+  (19, 5, 'Terrorism Coverage');
