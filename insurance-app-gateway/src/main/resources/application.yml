@@ -1,0 +1,52 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+           
+       - id: feedback-service
+         uri: lb://FEEDBACK-SERVICE
+         predicates:
+           - Path=/feedback/**
+         filters:
+           - AuthenticationFilter
+       
+       - id: insurance-service
+         uri: lb://INSURANCE-SERVICE
+         predicates:
+           - Path=/insurance-service/**
+         filters:
+           - AuthenticationFilter
+           
+       - id: shoppingcart-service
+         uri: lb://SHOPPING-CART-SERVICE
+         predicates:
+           - Path=/cart/**
+         filters:
+           - AuthenticationFilter
+           
+       - id: discount-service
+         uri: lb://DISCOUNT-SERVICE
+         predicates:
+           - Path=/discount/**
+         filters:
+           - AuthenticationFilter
+           
+       - id: order-service
+         uri: lb://ORDER-SERVICE
+         predicates:
+           - Path=/order/**
+         filters:
+           - AuthenticationFilter
+
+       - id: identity-service
+         uri: lb://IDENTITY-SERVICE
+         predicates:
+           - Path=/auth/**
+
+ application:
+   name: APP-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
